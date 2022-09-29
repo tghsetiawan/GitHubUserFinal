@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.teguh.githubuserfinal.fragment.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_searchUserFragment"
+            app:destination="@id/searchUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchUserFragment"
+        android:name="com.teguh.githubuserfinal.fragment.SearchUserFragment"
+        android:label="SearchUserFragment"
+        tools:layout="@layout/fragment_search_user">
+        <action
+            android:id="@+id/action_searchUserFragment_to_detailUserFragment"
+            app:destination="@id/detailUserFragment" />
+        <action
+            android:id="@+id/action_searchUserFragment_to_favoriteUserFragment"
+            app:destination="@id/favoriteUserFragment" />
+        <action
+            android:id="@+id/action_searchUserFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailUserFragment"
+        android:name="com.teguh.githubuserfinal.fragment.DetailUserFragment"
+        android:label="DetailUserFragment"
+        tools:layout="@layout/fragment_detail_user">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailUserFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/followerFragment"
+        android:name="com.teguh.githubuserfinal.fragment.FollowerFragment"
+        android:label="FollowerFragment"
+        tools:layout="@layout/fragment_follower"/>
+    <fragment
+        android:id="@+id/followingFragment"
+        android:name="com.teguh.githubuserfinal.fragment.FollowingFragment"
+        android:label="FollowingFragment"
+        tools:layout="@layout/fragment_following"/>
+    <fragment
+        android:id="@+id/favoriteUserFragment"
+        android:name="com.teguh.githubuserfinal.fragment.FavoriteUserFragment"
+        android:label="FavoriteUserFragment"
+        tools:layout="@layout/fragment_favorite_user">
+        <action
+            android:id="@+id/action_favoriteUserFragment_to_detailUserFragment"
+            app:destination="@id/detailUserFragment" />
+        <action
+            android:id="@+id/action_favoriteUserFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.teguh.githubuserfinal.fragment.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting"/>
+
+</navigation>
